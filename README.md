@@ -22,3 +22,8 @@ TensorFlow 模块化和分层设计十分精良，具体模块和层层如下：
 [tensorflow](tensorflow/README.md)
 
 [third_party](third_party/README.md)
+
+# 编译优化
+
+* [mlir](tensorflow/compiler/mlir/README.md)
+* [xla](tensorflow/compiler/xla/README.md)
