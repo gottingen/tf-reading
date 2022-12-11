@@ -42,7 +42,7 @@ TensorFlow 模块化和分层设计十分精良，具体模块和层层如下：
 ## common runtime 本地运行时
 
 * [device](docs/common_runtime_device.md)
-
+* [executor](docs/common_runtime_executor.md)
 # 技术议题
 
 ## 编译优化
