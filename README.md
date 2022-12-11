@@ -38,4 +38,5 @@ TensorFlow 模块化和分层设计十分精良，具体模块和层层如下：
 * [op](docs/framework_op.md) 算子定义
 * [kernel](docs/framework_kernel.md) 算子实现
 * [node](docs/framework_node.md) 图节点
+* [graph](docs/framework_graph.md) 图定义
 * [session](docs/session.md)
