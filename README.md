@@ -30,4 +30,7 @@ TensorFlow 模块化和分层设计十分精良，具体模块和层层如下：
 
 # 阅读
 
+## framwork
+
+* [tensor](docs/tensor.md) 张量
 * [session](docs/session.md)
