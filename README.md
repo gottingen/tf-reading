@@ -36,6 +36,7 @@ TensorFlow 模块化和分层设计十分精良，具体模块和层层如下：
 * [graph](docs/framework_graph.md) 图定义
 * [device](docs/framework_device.md) 设备
 * [function](docs/framework_function.md) 函数
+* [shape inference](docs/framework_shape_inference.md) 形状判断
 * [session](docs/session.md)
 
 # 技术议题
