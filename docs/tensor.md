@@ -174,3 +174,12 @@ message TensorSliceProto;//张量索引
 # 关系图
 
 ![](../images/tr_relation.jpg)
+
+# 相关文件
+
+* [tensor.h](../tensorflow/core/framework/tensor.h)
+* [tensor_types.h](../tensorflow/core/framework/tensor_types.h)
+* [tensor_reference.h](../tensorflow/core/framework/tensor_reference.h)
+* [tensor_shape.h](../tensorflow/core/framework/tensor_shape.h)
+* [tensor_slice.h](../tensorflow/core/framework/tensor_slice.h)
+* [tensor_description.h](../tensorflow/core/framework/tensor_description.h)
