@@ -95,7 +95,7 @@ TensorFlow 模块化和分层设计十分精良，具体模块和层层如下：
 ## 编译优化
 
 * [mlir](tensorflow/compiler/mlir/README.md)
-* [xla](tensorflow/compiler/xla/README.md)
+* [what is xla](docs/compiler/what_is_xla.md)
 
 ## 模型优化
 
