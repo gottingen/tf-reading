@@ -36,7 +36,12 @@ class Tensor {
 
 回顾Tensor包含的私有数据，TensorBuffer* buffer_是一个指向底层数据的指针，关于它的结构在下文中会详细说明。这意味着，Tensor并不包含实际的底层数据，它实际上只是对底层数据的一种视图。同样一份底层数据，可以提供多种视图。比如对于一个长度为12的数组，如果把它看做向量，它是一个1x12的向量，如果把它看作矩阵，可以认为是3x4或者2x6的矩阵，如果把它当作张量，可以认为是3x2x2的张量。通过这种方法，我们可以对同一份底层数据进行复用，避免了重复申请内存空间，提升了效率。实际上，numpy的底层多多维数组的实现，也是同样的道理。
 
-![](images/../../images/tf_buffer_shape.jpg)
+```mermaid
+graph TB
+    A("Tensor A, shape=[3,4]")-->D("底层数据TensorBuffer")
+    B("Tensor B, shape=[2,6]")-->D("底层数据TensorBuffer")
+    C("Tensor B, shape=[3,2,2]")-->D("底层数据TensorBuffer")
+```
 
 `typename TTypes<T>::Vec`涉及TF中的Tensor与Eigen3库的关系.
 
@@ -110,8 +115,12 @@ class TensorReference {
 
 TensorShape显然包含的是张量形状相关的信息，但其实不仅如此，它还包含了对张量数据类型的描述。TensorShape相关的核心类继承体系如下：
 
-![](../images/tf_shape.jpg)
-
+```mermaid
+graph LR
+    A("TensorShapeRep")-->|派生|B("TensorShapeBase")
+    B("TensorShapeBase")-->|派生|C("TensorShape")
+    B("TensorShapeBase")-->|派生|D("PartialTensorShape")
+```
 首先来看一下，最底层的TensorShapeRep的私有数据成员：
 ```c++
 class TensorShapeRep {
@@ -173,7 +182,23 @@ message TensorSliceProto;//张量索引
 
 # 关系图
 
-![](../images/tr_relation.jpg)
+```mermaid
+graph TB
+    A("core::RefCounted")-->|派生|B("TensorBuffer")
+    B("TensorBuffer")-->|派生|C("BufferBase")
+    C("BufferBase")-->|派生|D("Buffer")
+    C("BufferBase")-.包含.->E("Allocator* alloc_")
+    D("Buffer")-.包含.->F("T* data_")
+    D("Buffer")-.包含.->G("int64 elem_")
+    H("Tensor")-.包含.->B("TensorBuffer")
+    I("TensorShapeRep")-->|派生|J("TensorShapeBase")
+    J("TensorShapeBase")-->|派生|K("TensorShape")
+    J("TensorShapeBase")-->|派生|L("PartialTensorShape")
+    H("Tensor")-.索引结构.->M("TensorSlice")
+    H("Tensor")-.形状和数据类型描述.->K("TensorShape")
+    H("Tensor")-.转化.->N("TTypes::Tensor")
+    N("TTypes::Tensor")-.转化.->O("Eigen::TensorMap")
+```
 
 # 相关文件
 
