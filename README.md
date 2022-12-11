@@ -25,6 +25,45 @@ TensorFlow 模块化和分层设计十分精良，具体模块和层层如下：
 
 # 阅读
 
+## 源码目录
+
+| 目录 | 功能 |
+| :----: | :----: |
+| tensorflow/c | C API代码 |
+| tensorflow/cc | C++ API代码 |
+| tensorflow/compiler | XLA,JIT等编译优化相关 |
+| tensorflow/core | tf核心代码|
+| tensorflow/examples | 例子相关代码 |
+| tensorflow/go | go API相关代码 |
+| tensorflow/java | java API相关代码 |
+| tensorflow/python | Python API相关代码 |
+| tensorflow/stream_executor | 并行计算框架代码 |
+| tensorflow/tools | 各种辅助工具工程代码，例如第二章中生成Python安装包的代码就在这里 |
+| tensorflow/user_ops | tf插件代码 |
+| third_party/ | 依赖的第三方代码 |
+| tools | 工程编译配置相关| 
+| tensorflow/docs_src | 文档相关文件 |
+| tensorflow/contrib | |
+
+## tensorflow/core
+
+
+| 目录 | 功能 |
+| :----: | :----: |
+|tensorflow/core/common_runtime| 公共运行库|
+| tensorflow/core/debug | 调试相关 |
+| tensorflow/core/distributed_runtime| 分布式运行模块|
+| tensorflow/core/example | 例子代码 |
+| tensorflow/core/framework | 基础功能模块 |
+| tensorflow/core/graph | 计算图相关 |
+| tensorflow/core/grappler | 模型优化模块 |
+| tensorflow/core/kernels | 操作核心的实现代码，包括CPU和GPU上的实现|
+| tensorflow/core/lib | 公共基础库|
+| tensorflow/core/ops | 操作代码 |
+| tensorflow/core/platform | 平台实现相关代码 |
+| tensorflow/core/protobuf | .proto定义文件 |
+| tensorflow/core/public | API头文件|
+
 ## framwork
 
 * [tensor](docs/framework_tensor.md) 张量
