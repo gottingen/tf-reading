@@ -88,7 +88,15 @@ TensorFlow 模块化和分层设计十分精良，具体模块和层层如下：
 
 # 技术议题
 
+## 版本变化
+
+* [tf 1.x - tf 2.6](docs/tf1x_tf26.md)
+  
 ## 编译优化
 
 * [mlir](tensorflow/compiler/mlir/README.md)
 * [xla](tensorflow/compiler/xla/README.md)
+
+## 模型优化
+
+
