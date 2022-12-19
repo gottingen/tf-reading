@@ -107,5 +107,7 @@ TensorFlow 模块化和分层设计十分精良，具体模块和层层如下：
 * [llvm code book](book/LLVM%20Cookbook.pdf)
 * [LLVM IR 入门](docs/llvm/llvm_ir_1.md)
 * [生成 LLVM IR](docs/llvm/llvm_ir_2.md)
+* [LLVM IR 优化器](docs/llvm/llvm_ir_3.md)
 
 
+## mpi
